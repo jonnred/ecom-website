@@ -4,6 +4,29 @@
     box-sizing: border-box;
 }
 /************ homepage image ******************/
+.home-page{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #bbb;
+    height: 80vh;
+}
+.home-page-text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    font-size: 48px;
+}
+.home-page-image{
+    display: flex;
+    justify-content: center;
+    width: 400px;
+}
+.home-page-image img{
+    width: 200px;
+
+}
+
 /********  PRODUCTS **********/
 .heading{
     font-size: 28px;

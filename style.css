@@ -2,20 +2,27 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration: none;
+     color: inherit;
 }
 /************ homepage image ******************/
 .home-page{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #bbb;
+    background:linear-gradient( #a9a9a9 ,#f3f3f3 80%);
     height: 80vh;
+    width: 100vw;
 }
 .home-page-text{
     display: flex;
     flex-direction: column;
     margin-left: 50px;
-    font-size: 48px;
+    font-size: 38px;
 }
 .home-page-image{
     display: flex;
@@ -23,8 +30,9 @@
     width: 400px;
 }
 .home-page-image img{
-    width: 200px;
-
+    width: 150px;
+    justify-self: center;
+    align-self: center;
 }
 
 /********  PRODUCTS **********/
@@ -43,7 +51,7 @@
 .product{
     display:flex;
     flex-direction: column;
-    width: 300px;
+    max-width: 300px;
     position: relative;
     cursor: pointer;
     min-height: 300px;

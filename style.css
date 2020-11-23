@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+body{
+
+}
 a{
     text-decoration: none;
      color: inherit;
@@ -15,7 +18,7 @@ a{
     justify-content: space-between;
     align-items: center;
     background:linear-gradient( #a9a9a9 ,#f3f3f3 80%);
-    height: 80vh;
+    min-height: 80vh;
     width: 100vw;
 }
 .home-page-text{
@@ -23,6 +26,16 @@ a{
     flex-direction: column;
     margin-left: 50px;
     font-size: 38px;
+}
+.home-page-text button{
+    width: 100px;
+    background-color: blue;
+    border: none;
+    color: white;
+    font-weight: 600;
+    height: 35px;
+    position: relative;
+    top:20px;
 }
 .home-page-image{
     display: flex;
@@ -40,7 +53,7 @@ a{
     font-size: 28px;
     padding: 20px 50px;
     width: 220px;
-    background:linear-gradient( blue , white);
+    background:linear-gradient(to right , #a9a9a9 ,#f3f3f3 90%);
 } 
 
 
@@ -55,7 +68,7 @@ a{
     position: relative;
     cursor: pointer;
     min-height: 300px;
-    background: linear-gradient(#ddd , #bbb);
+    background: linear-gradient(#eee , #e9e9e9);
     margin: 20px;
 
 }
@@ -71,16 +84,19 @@ a{
     background-color: rgba(0, 128, 0, 0.253);
     height: 0px;
     position: absolute;
-    width: inherit;
+    width: 100%;
     bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
 }
+.add-to-cart:hover{
+    background-color: rgba(0, 128, 0, 0.553);
+}
 .hide{
     display: none;
-}
+    }
 .products-container{
     display: flex;
     flex-wrap: wrap;

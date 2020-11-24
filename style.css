@@ -133,10 +133,13 @@ a{
 .cart{
     position: absolute;
     width: 70vw;
-    height: 20vh;
+    height: 100vh;
     background-color: #a9a9a9;
-    left: 90vw;
+    right: 1%;
     top: 0%;
+    background-color: rgba(0, 128, 0);
+    padding: 10px 35px;
+    transition: 2s;
 }
 .cart-icon{
     float: right;

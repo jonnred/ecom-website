@@ -14,7 +14,7 @@ html{
     transition: 2s;
 }
 body{
-    overflow-x: hidden;
+
 }
 a{
     text-decoration: none;
@@ -128,4 +128,18 @@ a{
 .products-container{
     display: flex;
     flex-wrap: wrap;
+}
+/*************   CART SECTION  ***************/
+.cart{
+    position: absolute;
+    width: 70vw;
+    height: 20vh;
+    background-color: #a9a9a9;
+    left: 90vw;
+    top: 0%;
+}
+.cart-icon{
+    float: right;
+    width: 40px;
+    position: relative;
 }

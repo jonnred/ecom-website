@@ -20,6 +20,21 @@ a{
     text-decoration: none;
      color: inherit;
 }
+.nav{
+    position: fixed;
+    width: 100vw;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav span{
+    font-size: 20px;
+}
+.nav img{
+    width: 40px;
+    cursor: pointer;
+}
 /************ homepage image ******************/
 .home-page{
     display: flex;

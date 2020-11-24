@@ -27,6 +27,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
 }
 .nav span{
     font-size: 20px;
@@ -130,19 +131,28 @@ a{
     flex-wrap: wrap;
 }
 /*************   CART SECTION  ***************/
+.cart-container{
+}
 .cart{
+    z-index: 100;
     position: absolute;
-    width: 70vw;
+    width: 50vw;
     height: 100vh;
     background-color: #a9a9a9;
     right: 1%;
     top: 0%;
-    background-color: rgba(0, 128, 0);
+    background-color: rgba(255, 91, 0);
     padding: 10px 35px;
-    transition: 2s;
+    transition: .5s;
 }
 .cart-icon{
     float: right;
     width: 40px;
     position: relative;
+    display: block;
+}
+.cart-section{
+    position: relative;
+    background-color: white;
+    width: 80%;
 }

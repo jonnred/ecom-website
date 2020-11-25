@@ -6,4 +6,16 @@
     cartSection.classList.toggle("hide");
     
 })
+const addToCart = Array.from(document.querySelectorAll(".add-to-cart"));
 
+addToCart.forEach(element => {
+    element.addEventListener("click" , (e) =>{
+        setTimeout(() => {
+        element.parentElement.classList.add("hide");
+        }, 1000);
+        
+        element.parentElement.classList.add("animate__animated");
+        element.parentElement.classList.add("animate__fadeOutTopRight");
+        
+    })
+});

@@ -6,6 +6,19 @@
     cartSection.classList.toggle("hide");
     
 })
+// --------------remove 
+const removeCartBtn = Array.from(document.querySelectorAll(".cart-remove-btn"));
+removeCartBtn.forEach(element => {
+    element.addEventListener("click" , (e) => {
+        element.parentElement.parentElement.remove();
+    })
+});
+const totalPriceFunction = () => {
+    const totalPrice = document.querySelector(".total-price")
+    totalPrice.innerText
+}
+
+
 const addToCart = Array.from(document.querySelectorAll(".add-to-cart"));
 
 addToCart.forEach(element => {
@@ -13,9 +26,32 @@ addToCart.forEach(element => {
         setTimeout(() => {
         element.parentElement.classList.add("hide");
         }, 1000);
-        
-        element.parentElement.classList.add("animate__animated");
-        element.parentElement.classList.add("animate__fadeOutTopRight");
-        
-    })
+        let product = element.parentElement;
+        product.classList.add("animate__animated");
+        product.classList.add("animate__fadeOutTopRight");
+
+        const productPrice = product.querySelectorAll(".product-price");
+        let price = productPrice[0].innerText;
+        const productImg = product.querySelectorAll(".product-img")
+        let image = productImg[0].src;
+        addElementToCart(price ,image);
+    });
 });
+const addElementToCart = (price , image) =>{
+    let addItemToCart = `
+    <div class="cart-product">
+        <div class="cart-product-container">
+            <img class="cart-product-image " src="${image}">
+            <div class="cart-product-name">flexible bag</div>
+            <div class="price">${price}</div>
+        </div>
+        <input value="1" type="number" class="cart-product-price"></input>
+        <div class="cart-product-row-price cart-row">$100
+            <button class="cart-remove-btn">REMOVE</button>
+        </div>
+    </div>
+    `;
+    const cartContainer = document.querySelector(".cart-container");
+    cartContainer.innerHTML += addItemToCart; 
+
+}

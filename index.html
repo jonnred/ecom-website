@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <link rel="stylesheet" href="style.css">
-    <script defer src="index.js"></script>
+    <script async src="index.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -16,7 +16,7 @@
 <body>
     <!-- -------------------nav -->
     <div class="nav">
-        <span>LOGO</span>
+        <span class="logo">LOGO</span>
         <!-- --------------Cart Section  -->
         <div class="cart-section-container">
             <img src="./pictures/shopping_cart_black_48x48.png" class="icon cart-icon" alt="" srcset="">
@@ -46,16 +46,16 @@
                             <div class="price">100$</div>
                         </div>
                         <input value="1" type="number" class="cart-product-price"></input>
-                        <div class="cart-product-row-price cart-row">$100 <button
+                        <div class="cart-product-row-price cart-row">$100 <button utton
                                 class="cart-remove-btn">REMOVE</button>
                         </div>
                     </div>
-                    <hr>
-                    <div class="money-process">
-                        <div class="total-price">TOTAL : $200</div>
-                        <div class="purchase">
-                            <button class="purchase-button"> PURCHASE</button>
-                        </div>
+                </div>
+                <hr>
+                <div class="money-process">
+                    <div class="total-price">TOTAL : $200</div>
+                    <div class="purchase">
+                        <button class="purchase-button"> PURCHASE</button>
                     </div>
 
                 </div>
@@ -85,32 +85,85 @@
         </div>
         <div class="watch-products products-container">
             <div class="product product-watch" data-aos="fade-right" data-aos-once="true">
-                <img src="./pictures/watch2.png" alt="">
-                <div class="add-to-cart hide">Add To Cart</div>
+                <img class="product-img" src="./pictures/watch2.png" alt="">
+
+                <div class="add-to-cart hide">
+                    <div> Add To Cart </div>
+                    <div class="product-price">
+                        $99
+                    </div>
+                    <div class="product-name">
+
+                    </div>
+                </div>
             </div>
             <div class="product product-watch" data-aos="fade-right" data-aos-once="true">
-                <img src="./pictures/watch32.png" alt="">
-                <div class="add-to-cart hide">Add To Cart</div>
+                <img class="product-img" src="./pictures/watch32.png" alt="">
+
+                <div class="add-to-cart hide">
+                    <div> Add To Cart </div>
+                    <div class="product-price">
+                        $88
+                    </div>
+                    <div class="product-name">
+
+                    </div>
+                </div>
             </div>
             <div class="product product-watch" data-aos="fade-right" data-aos-once="true">
-                <img src="./pictures/watch4.png" alt="">
-                <div class="add-to-cart hide">Add To Cart</div>
+                <img class="product-img" src="./pictures/watch4.png" alt="">
+
+                <div class="add-to-cart hide">
+                    <div> Add To Cart </div>
+                    <div class="product-price">
+                        $77
+                    </div>
+                    <div class="product-name">
+
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="heading heading-design" data-aos="fade-in" data-aos-once="true" data-aos-delay="500"> bag</div>
         <div class="bag-products products-container">
             <div class="product product-bag" data-aos="fade-right" data-aos-once="true">
-                <img src="./pictures/bag121.png" alt="">
-                <div class="add-to-cart hide">Add To Cart</div>
+                <img class="product-img" src="./pictures/bag121.png" alt="">
+
+                <div class="add-to-cart hide">
+                    <div> Add To Cart </div>
+                    <div class="product-price">
+                        $199
+                    </div>
+                    <div class="product-name">
+
+                    </div>
+                </div>
             </div>
             <div class="product product-bag" data-aos="fade-right" data-aos-once="true">
-                <img src="./pictures/bag21.png" alt="">
-                <div class="add-to-cart hide">Add To Cart</div>
+                <img class="product-img" src="./pictures/bag21.png" alt="">
+
+                <div class="add-to-cart hide">
+                    <div> Add To Cart </div>
+                    <div class="product-price">
+                        $299
+                    </div>
+                    <div class="product-name">
+
+                    </div>
+                </div>
             </div>
             <div class="product product-bag" data-aos="fade-right" data-aos-once="true">
-                <img src="./pictures/bag3.png" alt="">
-                <div class="add-to-cart hide">Add To Cart</div>
+                <img class="product-img" src="./pictures/bag3.png" alt="">
+                <div class="add-to-cart hide">
+                    <div> Add To Cart </div>
+                    <div class="product-price">
+                        $99
+                    </div>
+                    <div class="product-name">
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>

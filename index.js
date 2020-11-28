@@ -7,12 +7,18 @@
     
 })
 // --------------remove 
+const removeBtnFunction = () =>{   
 const removeCartBtn = Array.from(document.querySelectorAll(".cart-remove-btn"));
 removeCartBtn.forEach(element => {
     element.addEventListener("click" , (e) => {
         element.parentElement.parentElement.remove();
     })
 });
+}
+const addingCartToProducts = () =>{
+
+}
+
 const totalPriceFunction = () => {
     const totalPrice = document.querySelector(".total-price")
     totalPrice.innerText
@@ -53,5 +59,19 @@ const addElementToCart = (price , image) =>{
     `;
     const cartContainer = document.querySelector(".cart-container");
     cartContainer.innerHTML += addItemToCart; 
+    removeBtnFunction();
+
 
 }
+// ------------------------- Purchaseeeee button 
+ const purchaseFunction = () =>{
+     const purchase = document.querySelector(".purchase-button");
+     purchase.addEventListener("click" , () => {
+         alert("Thanks for buying!")
+     })
+ }
+
+
+// ---------------functions 
+removeBtnFunction();
+purchaseFunction();

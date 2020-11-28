@@ -1,10 +1,9 @@
 /* cart section */
-    const cartIcon = document.querySelector(".cart-icon");
-    cartIcon.addEventListener("click" , () => {
+const cartIcon = document.querySelector(".cart-icon");
+cartIcon.addEventListener("click" , () => {
     cartIcon.parentElement.classList.toggle("cart");    
     const cartSection = document.querySelector(".cart-section");
     cartSection.classList.toggle("hide");
-    
 })
 // --------------remove 
 const removeBtnFunction = () =>{   
@@ -16,7 +15,23 @@ removeCartBtn.forEach(element => {
 });
 }
 const addingCartToProducts = () =>{
+    const addToCart = Array.from(document.querySelectorAll(".add-to-cart"));
+    addToCart.forEach(element => {
+        element.addEventListener("click" , (e) =>{
+            setTimeout(() => {
+            element.parentElement.classList.add("hide");
+            }, 1000);
+            let product = element.parentElement;
+            product.classList.add("animate__animated");
+            product.classList.add("animate__fadeOutTopRight");
 
+            const productPrice = product.querySelectorAll(".product-price");
+            let price = productPrice[0].innerText;
+            const productImg = product.querySelectorAll(".product-img")
+            let image = productImg[0].src;
+            addElementToCart(price ,image);
+        });
+    });
 }
 
 const totalPriceFunction = () => {
@@ -25,24 +40,7 @@ const totalPriceFunction = () => {
 }
 
 
-const addToCart = Array.from(document.querySelectorAll(".add-to-cart"));
 
-addToCart.forEach(element => {
-    element.addEventListener("click" , (e) =>{
-        setTimeout(() => {
-        element.parentElement.classList.add("hide");
-        }, 1000);
-        let product = element.parentElement;
-        product.classList.add("animate__animated");
-        product.classList.add("animate__fadeOutTopRight");
-
-        const productPrice = product.querySelectorAll(".product-price");
-        let price = productPrice[0].innerText;
-        const productImg = product.querySelectorAll(".product-img")
-        let image = productImg[0].src;
-        addElementToCart(price ,image);
-    });
-});
 const addElementToCart = (price , image) =>{
     let addItemToCart = `
     <div class="cart-product">
@@ -73,5 +71,6 @@ const addElementToCart = (price , image) =>{
 
 
 // ---------------functions 
+addingCartToProducts();
 removeBtnFunction();
 purchaseFunction();

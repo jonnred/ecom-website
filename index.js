@@ -10,7 +10,8 @@ const removeBtnFunction = () =>{
 const removeCartBtn = Array.from(document.querySelectorAll(".cart-remove-btn"));
 removeCartBtn.forEach(element => {
     element.addEventListener("click" , (e) => {
-        element.parentElement.parentElement.remove();
+        let product = element.parentElement.parentElement;
+        product.remove();
     })
 });
 }
@@ -20,7 +21,7 @@ const addingCartToProducts = () =>{
         element.addEventListener("click" , (e) =>{
             setTimeout(() => {
             element.parentElement.classList.add("hide");
-            }, 1000);
+            }, 500);
             let product = element.parentElement;
             product.classList.add("animate__animated");
             product.classList.add("animate__fadeOutTopRight");
@@ -49,7 +50,7 @@ const addElementToCart = (price , image) =>{
             <div class="cart-product-name">flexible bag</div>
             <div class="price">${price}</div>
         </div>
-        <input value="1" type="number" class="cart-product-price"></input>
+        <input value="1" type="number" class="cart-product-quantity"></input>
         <div class="cart-product-row-price cart-row">$100
             <button class="cart-remove-btn">REMOVE</button>
         </div>
@@ -59,7 +60,6 @@ const addElementToCart = (price , image) =>{
     cartContainer.innerHTML += addItemToCart; 
     removeBtnFunction();
 
-
 }
 // ------------------------- Purchaseeeee button 
  const purchaseFunction = () =>{
@@ -68,6 +68,7 @@ const addElementToCart = (price , image) =>{
          alert("Thanks for buying!")
      })
  }
+//  --------------------------- Cart Total 
 
 
 // ---------------functions 

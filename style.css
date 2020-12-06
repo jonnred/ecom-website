@@ -14,7 +14,7 @@ html{
 .testing{
     position: absolute;
     top:0px;
-    transform: translate(100vw);
+    transform: translate(200vw);
     transition: 2s;
 }
 body{
@@ -28,7 +28,7 @@ a{
     font-weight:bold;
 }
 .nav{
-    position: fixed;
+    position: absolute;
     width: 100vw;
     padding: 10px 50px;
     display: flex;
@@ -172,7 +172,7 @@ a{
 .cart-product-image{
     
 }
-.cart-product-price{
+.cart-product-quantity{
     width: 30px;
     height: 30px;
     padding-left: 4px;

@@ -47,16 +47,15 @@ a{
 .home-page{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background:linear-gradient( #a9a9a9 ,#f3f3f3 80%);
-    min-height: 80vh;
+    min-height: 100vh;
     width: 100vw;
 }
 .home-page-text{
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
     font-size: 38px;
 }
 .home-page-text button{
@@ -90,10 +89,7 @@ a{
     padding: 20px 50px;
     width: 220px;
     background:linear-gradient(to right , #a9a9a9 ,#f3f3f3 90%);
-} 
-
-
-
+}
 .heading-design{
 
 }
@@ -215,4 +211,19 @@ a{
     font-size: larger;
     font-weight: 600;
     justify-self: center;
+}
+@media only screen and (max-width:840px){
+    .home-page{
+        flex-direction: column;
+        padding-top: 50px;
+    }
+    .home-page button{
+        align-self: center;
+    }
+}
+@media only screen and (max-width:690px) {
+    .products-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }

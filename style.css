@@ -134,6 +134,7 @@ a{
 .products-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 /*************   CART SECTION  ***************/
 .cart-container{

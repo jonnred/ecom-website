@@ -1,3 +1,6 @@
+let rowPrice= 0;
+let totalPrice = 0;
+
 /* cart icon section */
 const cartIcon = document.querySelector(".cart-icon");
 cartIcon.addEventListener("click" , () => {
@@ -28,9 +31,7 @@ const addingCartToProducts = () =>{
             let price = productPrice[0].innerText;
             const productImg = product.querySelectorAll(".product-img")
             let image = productImg[0].src;
-            console.log("addingCart to producrs")
             addElementToCart(price ,image);
-            console.log("returned")
         });
     });
 }
@@ -51,10 +52,8 @@ const addElementToCart = (price , image) =>{
     `;
     const cartContainer = document.querySelector(".cart-container");
     cartContainer.innerHTML += addItemToCart; 
-    console.log("addElement to =caart   ")
     removeBtnFunction();
     PriceRowFunction();
-
     return
 
 }
@@ -62,27 +61,43 @@ const PriceRowFunction = () => {
     let cartQuantity = document.querySelectorAll('.cart-product-quantity');
     for (let index = 0; index < cartQuantity.length; index++) {
         let element = cartQuantity[index]
-        element.addEventListener("change", (e)=> {
-            console.log("iteratoi number:" + index)
-            let parent = element.parentElement;
-            let priceInt = parent.querySelectorAll(".price")[0].innerText;
-            priceInt = parseFloat(priceInt.replace('$' , ""));
-            let cartQuantity = parseFloat(element.value);
-            let result = cartRowTotal(cartQuantity , priceInt)
-            priceColumnFunction(result, index)
-            displayCartRowTotal(result, index)
+        
+        
+            element.addEventListener("change", (e)=> {
+                if(isNaN(element.value)== true || element.value < 1){
+                    element.value =1;
+                }
+                else{
+                    let parent = element.parentElement;
+                    let priceInt = parent.querySelectorAll(".price")[0].innerText;
+                    priceInt = parseFloat(priceInt.replace('$' , ""));
+                    let cartQuantity = parseFloat(element.value);
+                    let result = cartRowTotal(cartQuantity , priceInt)
+                    displayCartRowTotal(result, index)
+                    priceColumnFunction()
+                }
+                    
         });
     }       
 }
+
 const priceColumnFunction = () => {
-    
+    let cartRowPrices = document.querySelectorAll('.cart-row')
+    let price = 0;
+    let result = 0;
+    for (let index = 0; index < cartRowPrices.length; index++) {
+        let element = cartRowPrices[index];
+        price = element.innerText.replace("$", "");
+        price = parseFloat(price)
+        result += price
+        let totalPrice = document.querySelectorAll('.total-price')[0]
+        totalPrice.innerText = "TOTAL: $" + result;
+    }
 }
 const displayCartRowTotal = (result, index) =>{
-    console.log(index)
     let totalprice = document.querySelectorAll('.cart-row')[index-1]
     result = "$" +result
     totalprice.innerText = result;
-    console.log(index)
 }
 
 
@@ -104,8 +119,6 @@ removeBtnFunction();
 addingCartToProducts();
 purchaseFunction();
 PriceRowFunction();
-console.log("were aat START")
 
 }
 start();
-// https://ww7.readsnk.com/chapter/shingeki-no-kyojin-colored-chapter-119/

@@ -90,8 +90,6 @@ a {
   width: 220px;
   background: linear-gradient(to right, #a9a9a9, #f3f3f3 90%);
 }
-.heading-design {
-}
 .product {
   display: flex;
   flex-direction: column;
@@ -135,24 +133,22 @@ a {
   justify-content: center;
 }
 /*************   CART SECTION  ***************/
-.cart-container {
-}
+
 .cart {
   z-index: 100;
   position: absolute;
-  min-width: 90vw;
+  min-width: 100vw;
   min-height: 100vh;
   background-color: #d1d1d1;
-  right: 1%;
-  top: 0%;
+  right: 0;
+  top: 0;
   padding: 10px 35px;
-  transition: 0.5s;
+  transition: 0.1s;
 }
 .cart-icon {
   float: right;
   width: 40px;
   position: relative;
-  display: block;
 }
 .cart-icon:hover {
   box-shadow: 2px 2px 2px 2px #bbb;
@@ -168,8 +164,7 @@ a {
   align-items: center;
   margin-bottom: 20px;
 }
-.cart-product-image {
-}
+
 .cart-product-quantity {
   width: 30px;
   height: 30px;

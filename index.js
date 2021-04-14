@@ -33,17 +33,20 @@ const addingCartToProducts = () =>{
             let price = productPrice[0].innerText;
             const productImg = product.querySelectorAll(".product-img")
             let image = productImg[0].src;
-            addElementToCart(price ,image);
+            const productName = product.querySelectorAll(".product-name")
+            let name = productName[0].innerText;
+            const productButton = product.querySelectorAll(".purchase-button")
+            addElementToCart(price ,image , name);
         });
     });
 }
 
-const addElementToCart = (price , image) =>{
+const addElementToCart = (price , image , name) =>{
     let addItemToCart = `
     <div class="cart-product">
         <div class="cart-product-container">
             <img class="cart-product-image " src="${image}">
-            <div class="cart-product-name">flexible bag</div>
+            <h4 class="cart-product-name">${name}</h4>
             <div class="price">${price}</div>
         </div>
         <input value="1" type="number" class="cart-product-quantity"></input>
@@ -89,15 +92,24 @@ const priceColumnFunction = () => {
     let cartRowPrices = document.querySelectorAll('.cart-row')
     let price = 0;
     let result = 0;
-    for (let index = 0; index < cartRowPrices.length; index++) {
-        let element = cartRowPrices[index];
-        price = element.innerText.replace("$", "");
-        price = parseFloat(price)
-        result += price
-        let totalPrice = document.querySelectorAll('.total-price')[0]
-        totalPrice.innerText = "TOTAL: $" + result;
+    if(cartRowPrices.length<=0){
+        displaypriceColumnFunction(0)
     }
+    else{
+        for (let index = 0; index < cartRowPrices.length; index++) {
+            let element = cartRowPrices[index];
+            price = element.innerText.replace("$", "");
+            price = parseFloat(price)
+            result += price;
+            displaypriceColumnFunction(result)
+        }
+    }
+    return result
 }
+const displaypriceColumnFunction = (result) => {
+    let totalPrice = document.querySelectorAll('.total-price')[0]
+    totalPrice.innerText = "TOTAL: $" + result;
+} 
 const displayCartRowTotal = (result, index) =>{
     let totalprice = document.querySelectorAll('.cart-row')[index-1]
     result = "$" +result
@@ -110,7 +122,9 @@ const displayCartRowTotal = (result, index) =>{
  const purchaseFunction = () =>{
      const purchase = document.querySelector(".purchase-button");
      purchase.addEventListener("click" , () => {
-         alert("Thanks for buying!")
+         let price = 0;
+         price =priceColumnFunction()
+         alert("THE PRICE IS : $" + price)
      })
  }
 //  --------------------------- Cart row Total 

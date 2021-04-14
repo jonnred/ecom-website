@@ -15,6 +15,7 @@ removeCartBtn.forEach(element => {
     element.addEventListener("click" , (e) => {
         let product = element.parentElement.parentElement;
         product.remove();
+
         // i still need to update the price
         // need to update the total price and make the product show again
     })
@@ -54,6 +55,8 @@ const addElementToCart = (price , image) =>{
     cartContainer.innerHTML += addItemToCart; 
     removeBtnFunction();
     PriceRowFunction();
+    priceColumnFunction()
+
     return
 
 }
